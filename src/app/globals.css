@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 div {
   border: solid black 1px;
   margin-bottom: 10px;
@@ -16,7 +22,7 @@ header {
   grid-template-columns: 1fr auto;
   background-color: rgb(189, 223, 189);
   color: rgb(63, 77, 63);
-  font-weight:500;
+  font-weight: 500;
   padding: 10px;
   text-align: center;
 }

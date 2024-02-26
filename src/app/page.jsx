@@ -1,6 +1,7 @@
-import CardA from "./components/CardA";
-import NavBar from "./components/NavBar";
-import Promotional from "./components/Promotional";
+import CardA from "./components/molecules/Card/CardA";
+
+import Promotional from "./components/molecules/Promotional/Promotional";
+import NavBar from "./components/molecules/NavBar/NavBar";
 
 const products = [
   {
