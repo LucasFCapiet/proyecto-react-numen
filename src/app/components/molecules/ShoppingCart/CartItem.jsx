@@ -1,8 +1,9 @@
 const CartItem = ({ data, deleteFromCart }) => {
-  let { id, name, price, quantity } = data;
+  let { id, name, price, quantity , imgUrl } = data;
   return (
     <div className="cart-item">
       <h4>{name}</h4>
+      <img className="w-24 h-15" src={imgUrl} alt="" />
       <h5>
         $ {price} x {quantity} = ${price * quantity}
       </h5>

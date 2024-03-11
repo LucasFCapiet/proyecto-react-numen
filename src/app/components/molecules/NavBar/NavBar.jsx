@@ -33,7 +33,7 @@ function NavBar() {
       <div className="flex items-center">
         {buttonArray.map((item) => {
           return (
-            <button>
+            <button id="open_cart" className="border">
               <img src="" alt={item.alt} />
             </button>
           );
