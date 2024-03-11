@@ -2,6 +2,7 @@ import CardA from "./components/molecules/Card/CardA";
 
 import Promotional from "./components/molecules/Promotional/Promotional";
 import NavBar from "./components/molecules/NavBar/NavBar";
+import Cart from "./components/molecules/Cart/Cart";
 
 const products = [
   {
@@ -86,7 +87,7 @@ export default function Home() {
           Explora nuestro catálogo
         </button>
       </div>
-
+      <Cart />
       <div>
         <h1 className="text-center text-xl font-semibold">Titulo</h1>
         <div className="flex flex-row justify-center space-x-10">
