@@ -37,7 +37,7 @@ function NavBar() {
           <img src="" alt="💲 con contador" />
         </button>
       </div>
-    </header>
+    </nav>
   );
 }
 
