@@ -1,45 +1,84 @@
 import "./NavBar.css";
 
-// Arrays of information
-const listNavBar = [
-  { text: "Occasions▼", href: "#occassions" },
-  { text: "All Categories▼", href: "#categories" },
-  { text: "Gifts & Bundles▼", href: "#giftsandbundles" },
-  { text: "Our brands", href: "#brands" },
-  { text: "About Us", href: "#about" },
-];
-
-const buttonArray = [{ alt: "🔎" }, { alt: "👤" }, { alt: "💲 con contador" }];
-
 function NavBar() {
   return (
-    <nav className="flex flex-row" id="NavBar">
-      {/* logo */}
-      <div className="flex items-center">
-        <img src="/imgs/duck-logo.avif" alt="logo🖥️" width="50px" />
-        <h1>EmpresaPepito</h1>
+    <header className="bg-white px-4 py-3 border-b">
+      <div className="max-w-7xl mx-auto flex justify-between items-center">
+        {/* Logo and Promo */}
+        <div className="flex items-center">
+          <img className="h-12 w-40" src="/logo.png" alt="Logo" />
+        </div>
+        <nav className="hidden md:flex space-x-6">
+          <a
+            href="#"
+            className="text-sm font-medium text-gray-700 hover:text-gray-900">
+            Todas las categorias
+          </a>
+          <a
+            href="#"
+            className="text-sm font-medium text-gray-700 hover:text-gray-900">
+            Televisores
+          </a>
+          <a
+            href="#"
+            className="text-sm font-medium text-gray-700 hover:text-gray-900">
+            Telefonos
+          </a>
+          <a
+            href="#"
+            className="text-sm font-medium text-gray-700 hover:text-gray-900">
+            Heladeras
+          </a>
+          <a
+            href="#"
+            className="text-sm font-medium text-gray-700 hover:text-gray-900">
+            Lavarropas
+          </a>
+        </nav>
+
+        {/* Icons */}
+        <div className="flex items-center space-x-6">
+          <IoSearchOutline className="h-6 w-6 text-gray-700 hover:text-gray-900" />
+          <IoPersonOutline className="h-6 w-6 text-gray-700 hover:text-gray-900" />
+          <div className="relative">
+            <IoBagOutline className="h-6 w-6 text-gray-700 hover:text-gray-900" />
+            <span className="absolute -top-1 -right-2 flex items-center justify-center h-5 w-5 text-xs font-semibold text-white bg-red-600 rounded-full">
+              3
+            </span>
+          </div>
+        </div>
       </div>
-      {/*List */}
       <div className="flex items-center">
-        {listNavBar.map((item) => {
-          return (
-            <li>
-              <a href={item.href}>{item.text}</a>
-            </li>
-          );
-        })}
+        <ul className="flex gap-1 ">
+          <li>
+            <a href="#occassions">Occasions▼</a>
+          </li>
+          <li>
+            <a href="#categories">All Categories▼</a>
+          </li>
+          <li>
+            <a href="#giftsandbundles">Gifts & Bundles▼</a>
+          </li>
+          <li>
+            <a href="#brands">Our brands</a>
+          </li>
+          <li>
+            <a href="#about">About Us</a>
+          </li>
+        </ul>
       </div>
-      {/* Market */}
       <div className="flex items-center">
-        {buttonArray.map((item) => {
-          return (
-            <button>
-              <img src="" alt={item.alt} />
-            </button>
-          );
-        })}
+        <button>
+          <img src="" alt="🔎" />
+        </button>
+        <button>
+          <img src="" alt="👤" />
+        </button>
+        <button>
+          <img src="" alt="💲 con contador" />
+        </button>
       </div>
-    </nav>
+    </header>
   );
 }
 
