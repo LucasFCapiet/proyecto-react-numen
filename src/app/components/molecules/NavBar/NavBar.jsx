@@ -8,8 +8,6 @@ function NavBar() {
         <div className="flex items-center">
           <img className="h-12 w-40" src="/logo.png" alt="Logo" />
         </div>
-
-        {/* Navigation */}
         <nav className="hidden md:flex space-x-6">
           <a
             href="#"
