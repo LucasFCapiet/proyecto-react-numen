@@ -79,13 +79,7 @@ export default function Home() {
 
       <NavBar />
 
-      <div className="h-96 w-3/4  flex flex-col items-left justify-center mx-auto bg-cover bg-[url('https://geektime.es/wp-content/uploads/2020/12/mavic-air_flame-red_-1-e1542646586211.jpg')]">
-        <h1 className="text-xl font-bold text-white ">Titulo</h1>
-        <h2 className="text-lg font-semibold text-orange-200">Subtitulo</h2>
-        <button className="border rounded bg-orange-500 text-white font-semibold w-1/4">
-          Explora nuestro catálogo
-        </button>
-      </div>
+      <div className="h-96 w-3/4  flex flex-col items-left justify-center mx-auto bg-cover bg-[url('https://geektime.es/wp-content/uploads/2020/12/mavic-air_flame-red_-1-e1542646586211.jpg')]"></div>
 
       <div>
         <h1 className="text-center text-xl font-semibold">Titulo</h1>
