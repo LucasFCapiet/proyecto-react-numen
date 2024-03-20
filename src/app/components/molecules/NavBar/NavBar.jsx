@@ -1,82 +1,114 @@
 import "./NavBar.css";
+import { IoSearchOutline } from "react-icons/io5";
+import { IoPersonOutline } from "react-icons/io5";
+import { IoBagOutline } from "react-icons/io5";
+
+const menuItems = [
+  {
+    href: "/Electrónicos",
+    text: "Electrónicos",
+  },
+  {
+    href: "/Ropa",
+    text: "Ropa",
+  },
+  {
+    href: "/Hogar",
+    text: "Hogar",
+  },
+  {
+    href: "/Juguetes",
+    text: "Juguetes",
+  },
+  {
+    href: "/Celulares",
+    text: "Celulares",
+  },
+  {
+    href: "/Ipad",
+    text: "Ipad",
+  },
+];
+
+const primeryItems = [
+  {
+    href: "/Televisores",
+    text: "Televisores",
+  },
+  {
+    href: "/Telefonos",
+    text: "Telefonos",
+  },
+  {
+    href: "/Heladeras",
+    text: "Heladeras",
+  },
+];
 
 function NavBar() {
   return (
-    <header className="bg-white px-4 py-3 border-b">
+    <header className="bg-custom-blue px-4 py-3 border-b">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
-        {/* Logo and Promo */}
+        {/* Logo */}
         <div className="flex items-center">
           <img className="h-12 w-40" src="/logo.png" alt="Logo" />
         </div>
-        <nav className="hidden md:flex space-x-6">
-          <a
-            href="#"
-            className="text-sm font-medium text-gray-700 hover:text-gray-900">
-            Todas las categorias
-          </a>
-          <a
-            href="#"
-            className="text-sm font-medium text-gray-700 hover:text-gray-900">
-            Televisores
-          </a>
-          <a
-            href="#"
-            className="text-sm font-medium text-gray-700 hover:text-gray-900">
-            Telefonos
-          </a>
-          <a
-            href="#"
-            className="text-sm font-medium text-gray-700 hover:text-gray-900">
-            Heladeras
-          </a>
-          <a
-            href="#"
-            className="text-sm font-medium text-gray-700 hover:text-gray-900">
-            Lavarropas
-          </a>
+        {/* nav */}
+        <nav className="hidden md:flex space-x-16 h-12 items-center">
+          {/* Dropdown menu */}
+          <div className="group inline-block">
+            <button className="font-medium text-custom-white hover:text-custom-gray focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500 flex">
+              Todas las categorías
+              {/* Icon for dropdown, adjust as needed */}
+              <svg
+                className="ml-2 mt-1 w-4 h-4"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </button>
+            {/* Dropdown menu */}
+            <div className="absolute hidden text-custom-white pt-1 group-hover:block">
+              <div className="bg-custom-blue shadow-lg ring-1 ring-black ring-opacity-5">
+                {menuItems.map((item) => {
+                  return (
+                    <a
+                      href={item.href}
+                      className="rounded-t-lg text-base  font-medium text-custom-white hover:text-custom-gray py-2 px-6 block whitespace-nowrap">
+                      {item.text}
+                    </a>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+          {/* primary */}
+          {primeryItems.map((item) => {
+            return (
+              <a
+                href={item.href}
+                className="text-base  font-medium text-custom-white hover:text-custom-gray">
+                {item.text}
+              </a>
+            );
+          })}
         </nav>
 
         {/* Icons */}
         <div className="flex items-center space-x-6">
-          <IoSearchOutline className="h-6 w-6 text-gray-700 hover:text-gray-900" />
-          <IoPersonOutline className="h-6 w-6 text-gray-700 hover:text-gray-900" />
+          <IoSearchOutline className="h-6 w-6 text-custom-white hover:text-custom-gray cursor-pointer" />
+          <IoPersonOutline className="h-6 w-6 text-custom-white hover:text-custom-gray cursor-pointer" />
           <div className="relative">
-            <IoBagOutline className="h-6 w-6 text-gray-700 hover:text-gray-900" />
-            <span className="absolute -top-1 -right-2 flex items-center justify-center h-5 w-5 text-xs font-semibold text-white bg-red-600 rounded-full">
+            <IoBagOutline className="h-6 w-6 text-custom-white hover:text-custom-gray cursor-pointer" />
+            <span className="absolute -top-2 -right-3 flex items-center justify-center h-5 w-5 text-xs text-custom-white font-semibold text-white  rounded-full">
               3
             </span>
           </div>
         </div>
-      </div>
-      <div className="flex items-center">
-        <ul className="flex gap-1 ">
-          <li>
-            <a href="#occassions">Occasions▼</a>
-          </li>
-          <li>
-            <a href="#categories">All Categories▼</a>
-          </li>
-          <li>
-            <a href="#giftsandbundles">Gifts & Bundles▼</a>
-          </li>
-          <li>
-            <a href="#brands">Our brands</a>
-          </li>
-          <li>
-            <a href="#about">About Us</a>
-          </li>
-        </ul>
-      </div>
-      <div className="flex items-center">
-        <button>
-          <img src="" alt="🔎" />
-        </button>
-        <button>
-          <img src="" alt="👤" />
-        </button>
-        <button>
-          <img src="" alt="💲 con contador" />
-        </button>
       </div>
     </header>
   );
