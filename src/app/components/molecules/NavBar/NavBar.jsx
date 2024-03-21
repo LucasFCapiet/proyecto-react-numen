@@ -47,6 +47,7 @@ const primeryItems = [
 
 function NavBar() {
   return (
+<<<<<<< HEAD
     <header className="bg-custom-blue px-4 py-3 border-b">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
@@ -70,6 +71,30 @@ function NavBar() {
                 stroke="currentColor">
                 <path d="M19 9l-7 7-7-7"></path>
               </svg>
+=======
+    <nav className="flex flex-row" id="NavBar">
+      {/* logo */}
+      <div className="flex items-center">
+        <img src="/imgs/duck-logo.avif" alt="logo🖥️" width="50px" />
+        <h1>EmpresaPepito</h1>
+      </div>
+      {/*List */}
+      <div className="flex items-center">
+        {listNavBar.map((item) => {
+          return (
+            <li>
+              <a href={item.href}>{item.text}</a>
+            </li>
+          );
+        })}
+      </div>
+      {/* Market */}
+      <div className="flex items-center">
+        {buttonArray.map((item) => {
+          return (
+            <button id="open_cart" className="border">
+              <img src="" alt={item.alt} />
+>>>>>>> cart
             </button>
             {/* Dropdown menu */}
             <div className="absolute hidden text-custom-white pt-1 group-hover:block">

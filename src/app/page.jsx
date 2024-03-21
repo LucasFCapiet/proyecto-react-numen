@@ -2,9 +2,11 @@ import CardA from "./components/molecules/Card/CardA";
 
 import Promotional from "./components/molecules/Promotional/Promotional";
 import NavBar from "./components/molecules/NavBar/NavBar";
+import ShoppingCart from "./components/molecules/ShoppingCart/ShoppingCart";
 
 const products = [
   {
+    id: 1,
     imgUrl: "/imgs/NOTEBOOK-GFAST-N°-550W-01.jpg",
     productName: "NOTEBOOK GFAST N-550W",
     desc: [
@@ -25,6 +27,7 @@ const products = [
   },
 
   {
+    id: 2,
     imgUrl: "/imgs/MOTO-G13.webp",
     productName: "MOTO G13 128 GB ROSE GOLD 4 GB RAM",
     desc: [
@@ -43,6 +46,7 @@ const products = [
   },
 
   {
+    id: 3,
     imgUrl: "/imgs/CONSOLA-FAMILY-PORTATIL.jpg",
     productName: "CONSOLA FAMILY PORTATIL SUPREME",
     desc: [
@@ -57,6 +61,7 @@ const products = [
   },
 
   {
+    id:4,
     imgUrl: "/imgs/PARLANTE-JBL-FLIP-5.jpg",
     productName: "PARLANTE BT JBL FLIP 5",
     desc: [
@@ -94,7 +99,7 @@ export default function Home() {
           ))}
         </div>
       </div>
-
+            <div><ShoppingCart/></div>
       <div>h1 5 tarjetas promocionales: imagen, titulos y explicacion</div>
 
       <div>h1 h2 5 items ul boton imagen a la derecha</div>
