@@ -4,6 +4,10 @@ import Promotional from "./components/molecules/Promotional/Promotional";
 import NavBar from "./components/molecules/NavBar/NavBar";
 import ShoppingCart from "./components/molecules/ShoppingCart/ShoppingCart";
 
+
+
+
+
 const products = [
   {
     id: 1,
@@ -118,6 +122,7 @@ export default function Home() {
         la pagina con @ de instagram y abajo galeria carrusel de imagenes, se
         ven 5 y boton de desplazamiento lateral derecha
       </div>
+     
 
       <div className="bg-blue-300">
         cuadro con distinto color de Tell a friend y debajo redes: face, insta,
