@@ -2,6 +2,7 @@ import CardA from "./components/molecules/Card/CardA";
 
 import Promotional from "./components/molecules/Promotional/Promotional";
 import NavBar from "./components/molecules/NavBar/NavBar";
+import Footer from "./components/molecules/Footer/Footer";
 
 const products = [
   {
@@ -129,6 +130,7 @@ export default function Home() {
         6 columnas: 1- logo 2-occasions y debajo todas sus subcategorias 3-all
         categories y sus subs 4-gifts...etc.
       </footer>
+      <Footer />
     </main>
   );
 }
