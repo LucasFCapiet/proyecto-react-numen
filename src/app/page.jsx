@@ -3,6 +3,8 @@ import CardA from "./components/molecules/Card/CardA";
 import Promotional from "./components/molecules/Promotional/Promotional";
 import NavBar from "./components/molecules/NavBar/NavBar";
 import ShoppingCart from "./components/molecules/ShoppingCart/ShoppingCart";
+import shoppingReducer, { shoppingInitialState } from "./components/molecules/ShoppingCart/shoppingReducer";
+
 
 
 
@@ -91,7 +93,7 @@ export default function Home() {
       <div className="h-96 w-3/4  flex flex-col items-left justify-center mx-auto bg-cover bg-[url('https://geektime.es/wp-content/uploads/2020/12/mavic-air_flame-red_-1-e1542646586211.jpg')]"></div>
 
       <div>
-        <h1 className="text-center text-xl font-semibold">Titulo</h1>
+        <h1 className="text-center text-xl font-semibold text-[#fcfcfc]">Productos nuevos</h1>
         <div className="flex flex-row justify-center space-x-10">
           {products.map((el) => (
             <CardA

@@ -1,10 +1,12 @@
 "use client";
 import { TYPES } from "@/app/actions/shoppingActions";
+
 import { useReducer, useEffect } from "react";
+import shoppingInitialState from "./shoppingInitialState";
 import Product from "./Product";
 import CartItem from "./CartItem";
 import shoppingReducer from "./shoppingReducer";
-import { shoppingInitialState } from "./shoppingReducer";
+
 import axios from "axios";
 
 const ShoppingCart = () => {
@@ -63,21 +65,49 @@ const ShoppingCart = () => {
   return (
     <div id="shopping_window" className="shopping-window">
       <div className="window">
-        <button id="close_cart">X</button>
-        <h2>Carrito de Compras</h2>
-        <h3>Productos</h3>
-        <div className="box grid-responsive">
-          {products.map((product) => (
-            <Product key={product.id} data={product} addToCart={addToCart} />
-          ))}
+        <div className="flex flex-col">
+          <button id="close_cart" className="text-right">
+            X
+          </button>
+          <h2 className="font-bold text-xl text-center mb-1">
+            Carrito de Compras
+          </h2>
         </div>
-        <h3>Carrito</h3>
-        <div className="box">
-          {cart.map((item, index) => (
-            <CartItem key={index} data={item} deleteFromCart={deleteFromCart} />
-          ))}
+        <div className="flex flex-row justify-evenly">
+          <div className="flex flex-row">
+            <div className="flex flex-col">
+              {" "}
+              <h3 className="text-lg font-bold mb-2">Productos</h3>
+              <div className="flex flex-col justify-center items-center ">
+                {products.map((product) => (
+                  <Product
+                    key={product.id}
+                    data={product}
+                    addToCart={addToCart}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+          <div>
+            <h3 className="text-lg font-bold mb-2">Carrito</h3>
+            <div className="box">
+              {cart.map((item, index) => (
+                <CartItem
+                  key={index}
+                  data={item}
+                  deleteFromCart={deleteFromCart}
+                />
+              ))}
+            </div>
+            <button
+              className="bg-[#2c2c2c] rounded-full px-4 py-1 text-custom-white font-semibold hover:bg-[#5e5e5e]"
+              onClick={clearCart}
+            >
+              Limpiar Carrito
+            </button>
+          </div>
         </div>
-        <button onClick={clearCart}>Limpiar Carrito</button>
       </div>
     </div>
   );
