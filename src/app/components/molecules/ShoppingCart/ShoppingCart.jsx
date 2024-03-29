@@ -35,6 +35,7 @@ const ShoppingCart = () => {
     const open_cart = document.getElementById("open_cart");
     const shopping_window = document.getElementById("shopping_window");
     const close_cart = document.getElementById("close_cart");
+    const close_promotional = document.getElementById("close_promotional");
 
     open_cart.addEventListener("click", () => {
       shopping_window.classList.add("show");
@@ -42,6 +43,10 @@ const ShoppingCart = () => {
 
     close_cart.addEventListener("click", () => {
       shopping_window.classList.remove("show");
+    });
+
+    close_promotional.addEventListener("click", () => {
+      grid_container.classList.add("noshow");
     });
   }
 

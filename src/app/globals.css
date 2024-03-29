@@ -19,6 +19,7 @@ body {
   font-weight: 500;
   padding: 10px;
   text-align: center;
+  opacity: 1;
 }
 
 .close-button {
@@ -64,4 +65,9 @@ body {
 .show {
   pointer-events: auto;
   opacity: 1;
+}
+
+.noshow{
+  pointer-events: auto;
+  display: none;
 }
