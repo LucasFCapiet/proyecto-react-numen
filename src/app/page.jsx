@@ -10,6 +10,12 @@ import shoppingReducer, { shoppingInitialState } from "./components/molecules/Sh
 
 
 
+
+
+
+
+
+
 const products = [
   {
     id: 1,
@@ -106,6 +112,9 @@ export default function Home() {
         </div>
       </div>
             <div><ShoppingCart/></div>
+
+
+      
       <div>h1 5 tarjetas promocionales: imagen, titulos y explicacion</div>
 
       <div>h1 h2 5 items ul boton imagen a la derecha</div>
