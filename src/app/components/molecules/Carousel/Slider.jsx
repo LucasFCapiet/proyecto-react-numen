@@ -1,5 +1,5 @@
 import React from 'react';
-import OwlCarousel from '../pages/carousel'; // Corregir la importación del componente
+import OwlCarousel from './OwlCarousel';
 
 const Slider = () => {
   return (
