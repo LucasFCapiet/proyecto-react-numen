@@ -126,7 +126,7 @@ export default function Home() {
       <div>
         la pagina con @ de instagram y abajo galeria carrusel de imagenes, se
         ven 5 y boton de desplazamiento lateral derecha
-
+           
 
       </div>
     
