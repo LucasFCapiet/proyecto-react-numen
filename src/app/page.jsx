@@ -4,7 +4,7 @@ import Promotional from "./components/molecules/Promotional/Promotional";
 import NavBar from "./components/molecules/NavBar/NavBar";
 import ShoppingCart from "./components/molecules/ShoppingCart/ShoppingCart";
 import shoppingReducer, { shoppingInitialState } from "./components/molecules/ShoppingCart/shoppingReducer";
-
+import Slider from "./components/molecules/Carousel/Slider";
 
 
 
@@ -126,7 +126,7 @@ export default function Home() {
       <div>
         la pagina con @ de instagram y abajo galeria carrusel de imagenes, se
         ven 5 y boton de desplazamiento lateral derecha
-           
+       <Slider/>     
 
       </div>
     
