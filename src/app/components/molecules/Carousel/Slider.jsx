@@ -19,7 +19,7 @@ const Slider = () => {
         {/* BOTONES */}
         <div className='relative max-w-screen-xl mx-auto'>
 
-          {/* Carrusel importado desde Carousel.jsx */}
+          {/* Carrusel */}
           <OwlCarousel />
           
         </div>
