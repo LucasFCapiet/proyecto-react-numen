@@ -8,7 +8,7 @@ import SocialIcons from "./SocialIcons";
 const Footer = () => {
     
     return(
-            <footer className="bg-gray-900 text-white">
+            <footer style={{backgroundcolor:'#2068AC',color:'white'}}>
 
                 <div className="md:flex md:justify-between md:items-center sm:px-12 px-4 bg-[ffffff19] py-7 border-none">
                 
