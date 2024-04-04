@@ -1,5 +1,5 @@
-export const shoppingInitialState = {
-  /* FALTA ACTUALIZAR LISTA EN db.json - 28/03/2024 */
+/*export const shoppingInitialState = {
+  
 products: [
 {
   id: 1,
@@ -80,3 +80,4 @@ cart: [],
 };
 
 export default shoppingInitialState
+*/

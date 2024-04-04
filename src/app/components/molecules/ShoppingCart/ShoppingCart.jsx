@@ -1,4 +1,4 @@
-"use client";
+/*"use client";
 import { TYPES } from "@/app/actions/shoppingActions";
 
 import { useReducer, useEffect } from "react";
@@ -15,21 +15,24 @@ const ShoppingCart = () => {
   const updateState = async () => {
     const ENDPOINTS = {
       products: "http://localhost:5000/products",
-      cart: "http://localhost:5000/cart",
+      orderitem: "http://localhost:5000/orderitem",
     };
     const responseProducts = await axios.get(ENDPOINTS.products),
-      responseCart = await axios.get(ENDPOINTS.cart);
+      responseOrderItem = await axios.get(ENDPOINTS.orderitem);
 
     const data = {
       products: responseProducts.data,
-      cart: responseCart.data,
+      orderitem: responseOrderItem.data,
     };
 
     dispatch({ type: TYPES.READ_STATE, payload: data });
   };
+
+
   useEffect(() => {
     updateState();
   }, []);
+
 
   if (typeof window !== "undefined") {
     const open_cart = document.getElementById("open_cart");
@@ -50,10 +53,15 @@ const ShoppingCart = () => {
     });
   }
 
-  const addToCart = (id) => {
+
+  const addToCart = async (id) => {
     console.log(id);
     dispatch({ type: TYPES.ADD_TO_CART, payload: id });
+    updateData()
+  
+
   };
+  
   const deleteFromCart = (id, all = false) => {
     console.log(id, all);
     if (all) {
@@ -119,3 +127,4 @@ const ShoppingCart = () => {
 };
 
 export default ShoppingCart;
+*/

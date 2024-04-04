@@ -1,3 +1,4 @@
+import { useRouter } from "next/navigation";
 import "./NavBar.css";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoPersonOutline } from "react-icons/io5";
@@ -46,12 +47,22 @@ const primeryItems = [
 ];
 
 function NavBar() {
+  const router = useRouter();
+  const tohome = () => {
+    router.push("./"); }
+  const clic= () => {
+    router.push("/ordercart");
+    }	;
+  
+
   return (
     <header className="bg-custom-blue px-4 py-3 border-b">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
-          <img className="h-12 w-40" src="/logo.png" alt="Logo" />
+          <button onClick={tohome}>
+            <img className="h-12 w-40" src="/logo.png" alt="Logo" />
+          </button>
         </div>
         {/* nav */}
         <nav className="hidden md:flex space-x-16 h-12 items-center">
@@ -67,7 +78,8 @@ function NavBar() {
                 strokeLinejoin="round"
                 strokeWidth="2"
                 viewBox="0 0 24 24"
-                stroke="currentColor">
+                stroke="currentColor"
+              >
                 <path d="M19 9l-7 7-7-7"></path>
               </svg>
             </button>
@@ -77,8 +89,10 @@ function NavBar() {
                 {menuItems.map((item) => {
                   return (
                     <a
+                      key={item.href}
                       href={item.href}
-                      className="rounded-t-lg text-base  font-medium text-custom-white hover:text-custom-gray py-2 px-6 block whitespace-nowrap">
+                      className="rounded-t-lg text-base  font-medium text-custom-white hover:text-custom-gray py-2 px-6 block whitespace-nowrap"
+                    >
                       {item.text}
                     </a>
                   );
@@ -90,8 +104,10 @@ function NavBar() {
           {primeryItems.map((item) => {
             return (
               <a
+                key={item.href}
                 href={item.href}
-                className="text-base  font-medium text-custom-white hover:text-custom-gray">
+                className="text-base  font-medium text-custom-white hover:text-custom-gray"
+              >
                 {item.text}
               </a>
             );
@@ -100,14 +116,20 @@ function NavBar() {
 
         {/* Icons */}
         <div className="flex items-center space-x-6">
-          <IoSearchOutline className="h-6 w-6 text-custom-white hover:text-custom-gray cursor-pointer" />
-          <IoPersonOutline className="h-6 w-6 text-custom-white hover:text-custom-gray cursor-pointer" />
-          <div className="relative">
-            <IoBagOutline id="open_cart" className="h-6 w-6 text-custom-white hover:text-custom-gray cursor-pointer" />
-            <span className="absolute -top-2 -right-3 flex items-center justify-center h-5 w-5 text-xs text-custom-white font-semibold text-white  rounded-full">
-              3
-            </span>
-          </div>
+          <button>
+            <IoSearchOutline className="h-6 w-6 text-custom-white hover:text-custom-gray cursor-pointer" />
+          </button>
+          <button>
+            <IoPersonOutline className="h-6 w-6 text-custom-white hover:text-custom-gray cursor-pointer" />
+          </button>
+          <button onClick={clic}>
+            <div className="relative">
+              <IoBagOutline className="h-6 w-6 text-custom-white hover:text-custom-gray cursor-pointer" />
+              <span className="absolute -top-2 -right-3 flex items-center justify-center h-5 w-5 text-xs text-custom-white font-semibold text-white  rounded-full">
+                3
+              </span>
+            </div>
+          </button>
         </div>
       </div>
     </header>

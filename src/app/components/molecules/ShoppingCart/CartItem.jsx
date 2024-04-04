@@ -1,4 +1,4 @@
-const CartItem = ({ data, deleteFromCart }) => {
+/*const CartItem = ({ data, deleteFromCart }) => {
   let { id, name, price, quantity , imgUrl } = data;
   return (
     <div className="cart-item flex flex-col items-center justify-center mb-2 ">
@@ -14,4 +14,4 @@ const CartItem = ({ data, deleteFromCart }) => {
   );
 };
 
-export default CartItem;
+export default CartItem;*/

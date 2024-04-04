@@ -1,6 +1,6 @@
 
 
-const Product = ({ data, addToCart }) => {
+/*const Product = ({ data, addToCart }) => {
   const { id, name, price, imgUrl } = data;
   return (
     <div className="product flex flex-col items-center justify-center mb-2">
@@ -12,4 +12,4 @@ const Product = ({ data, addToCart }) => {
   );
 };
 
-export default Product;
+export default Product;*/

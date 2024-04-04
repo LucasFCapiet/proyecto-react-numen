@@ -1,3 +1,4 @@
+"use client"
 import CardA from "./components/molecules/Card/CardA";
 
 import Promotional from "./components/molecules/Promotional/Promotional";
@@ -5,85 +6,25 @@ import NavBar from "./components/molecules/NavBar/NavBar";
 import ShoppingCart from "./components/molecules/ShoppingCart/ShoppingCart";
 import shoppingReducer, { shoppingInitialState } from "./components/molecules/ShoppingCart/shoppingReducer";
 import Slider from "./components/molecules/Carousel/Slider";
+import CardDisplayer from "./components/molecules/Card/CardDisplayer";
+import { useRouter } from "next/navigation";
 
 
 
 
 
-const products = [
-  {
-    id: 1,
-    imgUrl: "/imgs/NOTEBOOK-GFAST-N°-550W-01.jpg",
-    productName: "NOTEBOOK GFAST N-550W",
-    desc: [
-      "Procesador:Intel Core i5 1035G4",
-      "Batería:4000 mAh",
-      "Memoria de almacenamiento:480 Gb",
-      "Puertos Usb: 2 x USB 3.0 1 x Type C",
-      "Tamaño de pantalla: 15.6” FHD IPS (1920 x1080)",
-      "Pantalla Táctil:NO",
-      "Puertos Hdmi:1",
-      "Puerto Ethernet: NO",
-      "Cámara:SI 2MP",
-      "Teclado Numérico:Retroiluminado + Pad Numerico",
-      "Entradas USB: 3",
-    ],
-    price1: 599500,
-    price2: 610100,
-  },
 
-  {
-    id: 2,
-    imgUrl: "/imgs/MOTO-G13.webp",
-    productName: "MOTO G13 128 GB ROSE GOLD 4 GB RAM",
-    desc: [
-      "Dispositivo liberado para que elijas la compañía telefónica que prefieras.",
-      "Pantalla IPS de 6.5'",
-      "Tiene 3 cámaras traseras de 50Mpx/2Mpx/2Mpx.",
-      "Cámara delantera de 8Mpx.",
-      "Procesador MediaTek Helio G85 Octa-Core de 2GHz con 4GB de RAM.",
-      "Batería de 5000mAh.",
-      "Memoria interna de 128GB.",
-      "Resistente a las salpicaduras.",
-      "Con reconocimiento facial y sensor de huella dactilar.",
-    ],
-    price1: 189999,
-    price2: 259999,
-  },
 
-  {
-    id: 3,
-    imgUrl: "/imgs/CONSOLA-FAMILY-PORTATIL.jpg",
-    productName: "CONSOLA FAMILY PORTATIL SUPREME",
-    desc: [
-      "Incluye 400 juegos.",
-      "Tamaño de la pantalla 2.8'.",
-      "Capacidad de la batería 600 mAh",
-      "Procesador 8 bits",
-      "Control de volumen lateral",
-    ],
-    price1: 15400,
-    price2: 17000,
-  },
 
-  {
-    id:4,
-    imgUrl: "/imgs/PARLANTE-JBL-FLIP-5.jpg",
-    productName: "PARLANTE BT JBL FLIP 5",
-    desc: [
-      "Colores: Consultar disponibilidad",
-      "Potencia de salida (RMS): 20 W",
-      "Autonomía de la batería: 12 h",
-      "Incluye batería recargable: Sí",
-      "Con Bluetooth: Sí",
-      "Conectores de entrada: USB-C",
-    ],
-    price1: 209000,
-    price2: 251200,
-  },
-];
 
 export default function Home() {
+  const router=useRouter();
+  const clic=()=>{
+    router.push("/ordercart");
+  }
+  
+ 
+  
   return (
     <main>
       <Promotional />
@@ -91,22 +32,20 @@ export default function Home() {
       <NavBar />
 
       <div className="h-96 w-3/4  flex flex-col items-left justify-center mx-auto bg-cover bg-[url('https://geektime.es/wp-content/uploads/2020/12/mavic-air_flame-red_-1-e1542646586211.jpg')]"></div>
-
+      <button onClick={clic}>CARRITO</button>
       <div>
         <h1 className="text-center text-xl font-semibold text-[#fcfcfc]">Productos nuevos</h1>
         <div className="flex flex-row justify-center space-x-10">
-          {products.map((el) => (
-            <CardA
-              imgUrl={el.imgUrl}
-              productName={el.productName}
-              price1={el.price1}
-              price2={el.price2}
-            />
-          ))}
+
+       
+       <CardDisplayer/>
+       
+      
+         
         </div>
       </div>
-            <div><ShoppingCart/></div>
-
+            
+     
 
       
       <div>h1 5 tarjetas promocionales: imagen, titulos y explicacion</div>
