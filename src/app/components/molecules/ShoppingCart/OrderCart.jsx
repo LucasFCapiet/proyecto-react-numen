@@ -9,7 +9,6 @@ const OrderCart = () => {
     loadItems();
   }, []);
 
-  
   const loadItems = async () => {
     let totalPrice = 0;
     const result = await axios.get("http://localhost:5000/orderitem");
@@ -25,6 +24,9 @@ const OrderCart = () => {
       await axios.delete(`http://localhost:5000/orderitem/${id}`);
       loadItems();
     }
+
+
+
   };
 
   const incDec = async (a, b, c, d, e) => {
@@ -75,9 +77,7 @@ const OrderCart = () => {
               +
             </button>
           </div>
-          <div className="order-price">
-            ${(item.qty * Number(item.price))}
-          </div>
+          <div className="order-price">${item.qty * Number(item.price)}</div>
           <button className="delete-btn" onClick={() => deleteOrder(item.id)}>
             Remove
           </button>

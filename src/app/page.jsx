@@ -1,30 +1,16 @@
-"use client"
-import CardA from "./components/molecules/Card/CardA";
-
+"use client";
 import Promotional from "./components/molecules/Promotional/Promotional";
 import NavBar from "./components/molecules/NavBar/NavBar";
-import ShoppingCart from "./components/molecules/ShoppingCart/ShoppingCart";
-import shoppingReducer, { shoppingInitialState } from "./components/molecules/ShoppingCart/shoppingReducer";
 import Slider from "./components/molecules/Carousel/Slider";
 import CardDisplayer from "./components/molecules/Card/CardDisplayer";
 import { useRouter } from "next/navigation";
 
-
-
-
-
-
-
-
-
 export default function Home() {
-  const router=useRouter();
-  const clic=()=>{
+  const router = useRouter();
+  const clic = () => {
     router.push("/ordercart");
-  }
-  
- 
-  
+  };
+
   return (
     <main>
       <Promotional />
@@ -34,20 +20,14 @@ export default function Home() {
       <div className="h-96 w-3/4  flex flex-col items-left justify-center mx-auto bg-cover bg-[url('https://geektime.es/wp-content/uploads/2020/12/mavic-air_flame-red_-1-e1542646586211.jpg')]"></div>
       <button onClick={clic}>CARRITO</button>
       <div>
-        <h1 className="text-center text-xl font-semibold text-[#fcfcfc]">Productos nuevos</h1>
+        <h1 className="text-center text-xl font-semibold text-[#fcfcfc]">
+          Productos nuevos
+        </h1>
         <div className="flex flex-row justify-center space-x-10">
-
-       
-       <CardDisplayer/>
-       
-      
-         
+          <CardDisplayer />
         </div>
       </div>
-            
-     
 
-      
       <div>h1 5 tarjetas promocionales: imagen, titulos y explicacion</div>
 
       <div>h1 h2 5 items ul boton imagen a la derecha</div>
@@ -65,10 +45,8 @@ export default function Home() {
       <div>
         la pagina con @ de instagram y abajo galeria carrusel de imagenes, se
         ven 5 y boton de desplazamiento lateral derecha
-       <Slider/>     
-
+        <Slider />
       </div>
-    
 
       <div className="bg-blue-300">
         cuadro con distinto color de Tell a friend y debajo redes: face, insta,

@@ -4,6 +4,8 @@ import { IoSearchOutline } from "react-icons/io5";
 import { IoPersonOutline } from "react-icons/io5";
 import { IoBagOutline } from "react-icons/io5";
 
+
+
 const menuItems = [
   {
     href: "/Electrónicos",
@@ -47,15 +49,25 @@ const primeryItems = [
 ];
 
 function NavBar() {
+
+
+
+
+
   const router = useRouter();
   const tohome = () => {
     router.push("./"); }
   const clic= () => {
     router.push("/ordercart");
     }	;
+
+  
   
 
   return (
+
+
+
     <header className="bg-custom-blue px-4 py-3 border-b">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}

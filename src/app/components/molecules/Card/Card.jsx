@@ -1,12 +1,17 @@
 import axios from "axios";
 import React from "react";
 
+
+
 const Card = (props) => {
   let qty = 1;
+
+
 
   const addItem = async (a, b) => {
     let isExisting = false;
     const result = await axios.get("http://localhost:5000/orderitem");
+    
     result.data.forEach((orderItem) => {
       if (a === orderItem.name) {
         orderItem.qty += 1;
@@ -17,6 +22,8 @@ const Card = (props) => {
         };
         axios.put(`http://localhost:5000/orderitem/${orderItem.id}`, order);
         isExisting = true;
+
+        
       }
     });
     if (!isExisting) {
@@ -27,6 +34,11 @@ const Card = (props) => {
       };
       axios.post("http://localhost:5000/orderitem", order);
     }
+
+    
+
+
+
   };
   return (
     <div className="flex flex-wrap">
@@ -36,10 +48,14 @@ const Card = (props) => {
             <img src={value.img} />
           </div>
           <div>
-            <p className="card-title text-balance text-xxxl font-bold text-[#ffffff]">{value.title}</p>
+            <p className="card-title text-balance text-xxxl font-bold text-[#ffffff]">
+              {value.title}
+            </p>
             {/*<p className="description">{value.description}</p>*/}
             <p className="text-lg font-bold">$ {value.price}</p>
-            <p className="line-through font-light text-[#8d8080]">$ {value.price2}</p>
+            <p className="line-through font-light text-[#8d8080]">
+              $ {value.price2}
+            </p>
             <button
               className="add-btn"
               onClick={() => addItem(value.title, value.price)}
