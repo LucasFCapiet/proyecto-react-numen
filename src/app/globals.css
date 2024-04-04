@@ -88,7 +88,6 @@ body {
 .card-image {
   max-height: 100%;
   flex-grow: 1;
-
 }
 
 .card-image img {
@@ -100,7 +99,6 @@ body {
   text-align: center;
   margin: 0;
   padding: 1px;
-
 }
 
 .card-title {
@@ -109,7 +107,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #2068AC;
+  background-color: #2068ac;
   flex-grow: 1;
   height: 3rem;
 }
@@ -121,7 +119,7 @@ body {
 .card-displayer {
   width: 80%;
   text-align: center;
-  margin-left: 10%;
+  margin-left: 4%;
 }
 
 .card-displayer > .card {
@@ -166,20 +164,38 @@ body {
   font-weight: bold;
 }
 
+.order-card {
+  background-color: #ffffff;
+  border: #ffffff solid 1px;
+}
+
 .order-card,
 .order-total {
   margin: 0 0 10px 20%;
-  border: 1px solid #053742;
   width: 60%;
   padding: 10px;
+}
+
+.order-total {
+  border: 1px solid #053742;
+}
+
+.order-item{
+  width: 30%;
+
 }
 
 .order-item,
 .order-qty,
 .order-price {
   display: inline-flex;
-  min-width: 28%;
+  flex-direction: row;
+  justify-items: space-between;
+  width: 30%;
+
+
 }
+
 
 .qty-btn {
   font-weight: bold;
@@ -210,7 +226,8 @@ body {
   border-radius: 20px;
   background: #ffffff;
   font-weight: bold;
-  margin-left: 30px;
+  margin-top: 2px;
+  margin-left: 6px;
 }
 
 .delete-btn:hover {
@@ -226,23 +243,25 @@ body {
 .total,
 .total-price,
 .place-order-btn {
+  
   display: inline-flex;
 }
 
 .total {
-  min-width: 55%;
+
+  min-width: 60%;
 }
 
 .total-price {
-  min-width: 33%;
-  text-align: right;
+  min-width: 30%;
+
 }
 
 .place-order-btn {
   border: 1px solid rgb(255, 238, 0);
   background-color: rgb(255, 238, 0);
   border-radius: 10px;
-  color:#000000;
+  color: #000000;
   font-weight: 500;
   cursor: pointer;
 }
@@ -255,4 +274,58 @@ body {
 .place-order-btn:active {
   background-color: rgb(251, 255, 0);
   border: 1px solid rgb(251, 255, 0);
+}
+
+.remove-all-btn{
+
+width: 3%;
+cursor: pointer;
+}
+
+/* Estilo para tablets */
+@media (max-width: 768px) {
+  .order-card,
+  .order-total {
+    margin: 0 0 10px 10%;
+    width: 80%;
+  }
+
+
+  .card {
+    width: 150px;
+  }
+
+  .card-image img {
+    width: 149px;
+  }
+
+  .card-title {
+    font-size: 12px;
+  }
+
+
+}
+
+/* Estilo para celulares */
+@media (max-width: 480px) {
+  .order-card,
+  .order-total {
+    margin: 0 0 10px 5%;
+    width: 90%;
+  }
+
+
+  .card {
+    width: 100px;
+  }
+
+  .card-image img {
+    width: 99px;
+  }
+
+  .card-title {
+    font-size: 10px;
+  }
+
+ 
 }

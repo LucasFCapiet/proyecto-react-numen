@@ -24,9 +24,18 @@ const OrderCart = () => {
       await axios.delete(`http://localhost:5000/orderitem/${id}`);
       loadItems();
     }
+  };
 
+  const deleteAll = async () => {
+    let isDelete = window.confirm("Are you sure to delete all items?");
+    if (isDelete) {
+      const allItems = await axios.get(`http://localhost:5000/orderitem`);
 
-
+      for (let item of allItems.data) {
+        await axios.delete(`http://localhost:5000/orderitem/${item.id}`);
+      }
+      loadItems();
+    }
   };
 
   const incDec = async (a, b, c, d, e) => {
@@ -53,7 +62,7 @@ const OrderCart = () => {
   return (
     <>
       <div className="order-area">
-        <div className="order-total">Your Order</div>
+        <div className="order-total">Pedido</div>
       </div>
       {items.map((item, index) => (
         <div className="order-card" key={index}>
@@ -79,7 +88,7 @@ const OrderCart = () => {
           </div>
           <div className="order-price">${item.qty * Number(item.price)}</div>
           <button className="delete-btn" onClick={() => deleteOrder(item.id)}>
-            Remove
+            Quitar
           </button>
         </div>
       ))}
@@ -87,7 +96,12 @@ const OrderCart = () => {
       <div className="order-total">
         <div className="total">Total</div>
         <div className="total-price">$ {total}</div>
-        <div className="place-order-btn">Place Order</div>
+        <div className="place-order-btn">Comprar</div>
+        <div className="remove-all-btn" onClick={() => deleteAll()}>
+        <svg className="h-8 w-8 text-slate-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
+  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+</svg>
+        </div>
       </div>
     </>
   );

@@ -3,13 +3,10 @@ import Promotional from "./components/molecules/Promotional/Promotional";
 import NavBar from "./components/molecules/NavBar/NavBar";
 import Slider from "./components/molecules/Carousel/Slider";
 import CardDisplayer from "./components/molecules/Card/CardDisplayer";
-import { useRouter } from "next/navigation";
+
 
 export default function Home() {
-  const router = useRouter();
-  const clic = () => {
-    router.push("/ordercart");
-  };
+
 
   return (
     <main>
@@ -18,10 +15,10 @@ export default function Home() {
       <NavBar />
 
       <div className="h-96 w-3/4  flex flex-col items-left justify-center mx-auto bg-cover bg-[url('https://geektime.es/wp-content/uploads/2020/12/mavic-air_flame-red_-1-e1542646586211.jpg')]"></div>
-      <button onClick={clic}>CARRITO</button>
+
       <div>
         <h1 className="text-center text-xl font-semibold text-[#fcfcfc]">
-          Productos nuevos
+          Nuestros Productos
         </h1>
         <div className="flex flex-row justify-center space-x-10">
           <CardDisplayer />
