@@ -1,12 +1,11 @@
 import React from "react"
 
-const Item = () => {
+const Item = ({categories}) => {
   return (
     <ul>
-        <li>Ejemplo</li>
-        <li>Ejemplo</li>
-        <li>Ejemplo</li>
-        <li>Ejemplo</li>
+        {categories.map((category)=>(
+          <li className="ml-[30%]">{category.text}</li>
+        ))}
     </ul>
   )
 }

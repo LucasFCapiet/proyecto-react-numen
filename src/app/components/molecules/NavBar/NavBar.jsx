@@ -3,50 +3,9 @@ import "./NavBar.css";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoPersonOutline } from "react-icons/io5";
 import { IoBagOutline } from "react-icons/io5";
+import { menuItems, primeryItems } from "@/app/constants";
 
 
-
-const menuItems = [
-  {
-    href: "/Electrónicos",
-    text: "Electrónicos",
-  },
-  {
-    href: "/Ropa",
-    text: "Ropa",
-  },
-  {
-    href: "/Hogar",
-    text: "Hogar",
-  },
-  {
-    href: "/Juguetes",
-    text: "Juguetes",
-  },
-  {
-    href: "/Celulares",
-    text: "Celulares",
-  },
-  {
-    href: "/Ipad",
-    text: "Ipad",
-  },
-];
-
-const primeryItems = [
-  {
-    href: "/Televisores",
-    text: "Televisores",
-  },
-  {
-    href: "/Telefonos",
-    text: "Telefonos",
-  },
-  {
-    href: "/Heladeras",
-    text: "Heladeras",
-  },
-];
 
 function NavBar() {
 

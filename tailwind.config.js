@@ -10,7 +10,7 @@ module.exports = {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
     colors: {
@@ -21,7 +21,7 @@ module.exports = {
       'custom-violet': '#656BE2',
       'custom-white': '#FFFFFF',
       'custom-grey': '#bg-gray-100',
-      
+      'custom-hover': '#3E8FDB'
     },
   },
   plugins: [],
