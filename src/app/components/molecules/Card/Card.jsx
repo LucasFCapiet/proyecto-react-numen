@@ -10,7 +10,7 @@ const Card = (props) => {
 
   const addItem = async (a, b) => {
     let isExisting = false;
-    const result = await axios.get("http://localhost:5000/orderitem");
+    const result = await axios.get("http://localhost:8080/orderitem");
     
     result.data.forEach((orderItem) => {
       if (a === orderItem.name) {
@@ -20,7 +20,7 @@ const Card = (props) => {
           price: b,
           qty: orderItem.qty,
         };
-        axios.put(`http://localhost:5000/orderitem/${orderItem.id}`, order);
+        axios.put(`http://localhost:8080/orderitem/${orderItem.id}`, order);
         isExisting = true;
 
         
@@ -32,7 +32,7 @@ const Card = (props) => {
         price: b,
         qty: qty,
       };
-      axios.post("http://localhost:5000/orderitem", order);
+      axios.post("http://localhost:8080/orderitem", order);
     }
 
     

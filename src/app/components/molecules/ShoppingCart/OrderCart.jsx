@@ -11,7 +11,7 @@ const OrderCart = () => {
 
   const loadItems = async () => {
     let totalPrice = 0;
-    const result = await axios.get("http://localhost:5000/orderitem");
+    const result = await axios.get("http://localhost:8080/orderitem");
     setItems(result.data);
     result.data.map((prices) => {
       totalPrice += prices.qty * Number(prices.price);
@@ -21,7 +21,7 @@ const OrderCart = () => {
   const deleteOrder = async (id) => {
     let isDelete = window.confirm("Are you sure to delete this item?");
     if (isDelete) {
-      await axios.delete(`http://localhost:5000/orderitem/${id}`);
+      await axios.delete(`http://localhost:8080/orderitem/${id}`);
       loadItems();
     }
   };
@@ -29,10 +29,10 @@ const OrderCart = () => {
   const deleteAll = async () => {
     let isDelete = window.confirm("Are you sure to delete all items?");
     if (isDelete) {
-      const allItems = await axios.get(`http://localhost:5000/orderitem`);
+      const allItems = await axios.get(`http://localhost:8080/orderitem`);
 
       for (let item of allItems.data) {
-        await axios.delete(`http://localhost:5000/orderitem/${item.id}`);
+        await axios.delete(`http://localhost:8080/orderitem/${item.id}`);
       }
       loadItems();
     }
@@ -56,7 +56,7 @@ const OrderCart = () => {
       }
     }
     const order = { name: d, price: e, qty: a };
-    await axios.put(`http://localhost:5000/orderitem/${b}`, order);
+    await axios.put(`http://localhost:8080/orderitem/${b}`, order);
     loadItems();
   };
   return (
@@ -87,7 +87,7 @@ const OrderCart = () => {
             </button>
           </div>
           <div className="order-price">${item.qty * Number(item.price)}</div>
-          <button className="delete-btn" onClick={() => deleteOrder(item.id)}>
+          <button className="delete-btn p-2" onClick={() => deleteOrder(item.id)}>
             Quitar
           </button>
         </div>
