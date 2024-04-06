@@ -9,7 +9,7 @@
     {
       "name": "PARLANTE BT JBL FLIP 5",
       "price": 209000,
-      "qty": 2,
+      "qty": 6,
       "id": "f6f1"
     },
     {
@@ -21,14 +21,20 @@
     {
       "name": "NOTEBOOK GFAST N-550W",
       "price": 599500,
-      "qty": 3,
+      "qty": 4,
       "id": "e28e"
     },
     {
       "name": "MOTO G13 128 GB ROSE GOLD 4 GB RAM",
       "price": 189999,
-      "qty": 2,
+      "qty": 4,
       "id": "7cc1"
+    },
+    {
+      "id": "ae7b",
+      "name": "SMART LED TV SAMSUNG 55 PULGADAS 4K UHD 55AU7000",
+      "price": 679999,
+      "qty": 1
     }
   ],
   "cartCount": 0
