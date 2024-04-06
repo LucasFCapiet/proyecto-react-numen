@@ -20,8 +20,8 @@ export const menuItems = [
       text: "Celulares",
     },
     {
-      href: "/Ipad",
-      text: "Ipad",
+      href: "/Ipads",
+      text: "Ipads",
     },
   ];
   

@@ -43,7 +43,8 @@ class TellAFriendBox extends React.Component {
           onChange={this.handleMessageChange}
           placeholder="Escribe aquí..."
           rows={4}
-          style={{ width: "80%", maxWidth: "100%", minHeight: "100px", color: "black" }} // Establecer el tamaño y el color del texto
+          style={{ width: "80%", maxWidth: "100%", minHeight: "80px", color: "black" }} // Establecer el tamaño y el color del texto
+          className="rounded-lg my-4 p-2"
         />
         <br />
         <button onClick={this.handleSendClick}>Copiar y Enviar por Whatsapp</button>
