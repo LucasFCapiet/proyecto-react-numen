@@ -14,8 +14,8 @@ function Promotional() {
   return (
     <div className="grid-container" id="grid_container">
       <p>
-        Envíos gratis a partir de $10000. Descuentos adicionales a partir de
-        compras por $20000
+        Envíos gratis a partir de $100000. Descuentos adicionales a partir de
+        compras por $200000.
       </p>
       <button
         className="close-button"

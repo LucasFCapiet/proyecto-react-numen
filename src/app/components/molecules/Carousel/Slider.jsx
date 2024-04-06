@@ -1,9 +1,16 @@
 import React from 'react';
 import OwlCarousel from './OwlCarousel';
 
+
+import { ThemeContext } from "../NavBar/DarkMode";
+import { useContext } from "react";
+
 const Slider = () => {
+
+  const { theme } = useContext(ThemeContext)
+
   return (
-    <section className='relative py-20 md:py-32 overflow-hidden'>
+    <section className={`relative py-20 md:py-32 overflow-hidden ${theme}`}>
       <div className='relative container px-4 mx-auto'>
         <div className='text-center mb-8'>
           <span className='inline-block py-1 px-3 mb-2 text-s font-semibold text-black-900 bg-orange-50 rounded-full'>

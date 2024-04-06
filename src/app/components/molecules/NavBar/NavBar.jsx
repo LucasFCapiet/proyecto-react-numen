@@ -3,14 +3,20 @@ import "./NavBar.css";
 import { IoSearchOutline } from "react-icons/io5";
 import { IoPersonOutline } from "react-icons/io5";
 import { IoBagOutline } from "react-icons/io5";
+import { IoContrastSharp } from "react-icons/io5";
 import { menuItems, primeryItems } from "@/app/constants";
+
+import { ThemeContext } from "./DarkMode";
+
+import { useContext } from "react";
+
 
 
 
 function NavBar() {
 
 
-
+  const { theme, handleTheme } = useContext(ThemeContext)
 
 
   const router = useRouter();
@@ -27,7 +33,7 @@ function NavBar() {
 
 
 
-    <header className="bg-custom-blue px-4 py-3 border-b">
+    <header className={`bg-custom-blue px-4 py-3 border-b ${theme}`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
@@ -56,7 +62,7 @@ function NavBar() {
             </button>
             {/* Dropdown menu */}
             <div className="absolute hidden text-custom-white pt-1 group-hover:block">
-              <div className="bg-custom-blue shadow-lg ring-1 ring-black ring-opacity-5">
+              <div className={`bg-custom-blue shadow-lg ring-1 ring-black ring-opacity-5 ${theme}`}>
                 {menuItems.map((item) => {
                   return (
                     <a
@@ -93,6 +99,7 @@ function NavBar() {
           <button>
             <IoPersonOutline className="h-6 w-6 text-custom-white hover:text-custom-gray cursor-pointer" />
           </button>
+          <IoContrastSharp className="h-6 w-6 text-custom-white hover:text-custom-gray cursor-pointer" onClick={handleTheme}/>
           <button onClick={clic}>
             <div className="relative">
               <IoBagOutline className="h-6 w-6 text-custom-white hover:text-custom-gray cursor-pointer" />

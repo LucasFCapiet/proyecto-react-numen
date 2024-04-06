@@ -330,3 +330,7 @@ cursor: pointer;
 
  
 }
+
+.dark{
+  background-color: grey;
+}
