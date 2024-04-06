@@ -4,11 +4,15 @@ import React from "react";
 import ItemsContainer from "./ItemsConteiner";
 import SocialIcons from "./SocialIcons";
 
+import { ThemeContext } from "../NavBar/DarkMode";
+import { useContext } from "react";
+
 
 const Footer = () => {
     
+    const { theme } = useContext(ThemeContext)
     return(
-            <footer className='bg-custom-blue text-custom-white'>
+            <footer className={`bg-custom-blue text-custom-white ${theme}`}>
 
                 <div className="md:flex md:justify-between md:items-center sm:px-12 px-4 bg-[ffffff19] py-7 border-none">
                 </div>
