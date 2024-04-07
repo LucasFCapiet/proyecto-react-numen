@@ -1,12 +1,6 @@
 {
   "orderitem": [
     {
-      "name": "CONSOLA FAMILY PORTATIL",
-      "price": 15400,
-      "qty": 2,
-      "id": "514f"
-    },
-    {
       "name": "PARLANTE BT JBL FLIP 5",
       "price": 209000,
       "qty": 6,
@@ -23,12 +17,6 @@
       "price": 599500,
       "qty": 4,
       "id": "e28e"
-    },
-    {
-      "name": "MOTO G13 128 GB ROSE GOLD 4 GB RAM",
-      "price": 189999,
-      "qty": 4,
-      "id": "7cc1"
     },
     {
       "id": "ae7b",

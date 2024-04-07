@@ -1,7 +1,11 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 
+import { ThemeContext } from "../NavBar/DarkMode";
+import { useContext } from "react";
+
 const OrderCart = () => {
+  const { theme } = useContext(ThemeContext)
   const [items, setItems] = useState([]);
   const [total, setTotal] = useState();
 
@@ -61,7 +65,8 @@ const OrderCart = () => {
   };
   return (
     <>
-      <div className="order-area">
+    <div className={`${theme}`}>
+      <div className={`order-area ${theme}`}>
         <div className="order-total">Pedido</div>
       </div>
       {items.map((item, index) => (
@@ -103,6 +108,7 @@ const OrderCart = () => {
 </svg>
         </div>
       </div>
+    </div>
     </>
   );
 };

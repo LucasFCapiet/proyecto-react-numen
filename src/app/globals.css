@@ -154,12 +154,11 @@ body {
 
 /* VVVVVVVV CART VVVVVVVV*/
 
-.order-area {
+/* .order-area {
   margin-top: 50px;
 }
-
+*/
 .order-total {
-  margin-top: 10px;
   background: #053742;
   color: #ffffff;
   font-weight: bold;
