@@ -20,18 +20,18 @@ export default function Home() {
 
       <ThemeContextProvider>
 
-      <Promotional />
+        <Promotional />
 
-      <NavBar />
+        <NavBar />
 
-      <DivImg />
-      <DivH1 />
+        <DivImg />
+        <DivH1 />
 
-      <div>
+
         <Slider />
-      </div>
 
-      <Footer />
+
+        <Footer />
 
       </ThemeContextProvider>
 

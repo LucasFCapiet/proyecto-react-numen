@@ -10,7 +10,7 @@ const Slider = () => {
   const { theme } = useContext(ThemeContext)
 
   return (
-    <section className={`relative py-20 md:py-32 overflow-hidden ${theme}`}>
+    <section className={`relative py-20 md:py-32 overflow-hidden  ${theme}`} id='slider-section'>
       <div className='relative container px-4 mx-auto'>
         <div className='text-center mb-8'>
           <h1 className='font-heading text-4xl xs:text-6xl md:text-7xl font-bold text-gray-900 mb-2 white'>
