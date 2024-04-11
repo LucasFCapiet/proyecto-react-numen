@@ -29,6 +29,12 @@
       "price": 84900,
       "qty": 2,
       "id": "822d"
+    },
+    {
+      "id": "daf2",
+      "name": "NOTEBOOK GFAST N-550W",
+      "price": 599500,
+      "qty": 1
     }
   ],
   "cartCount": 0

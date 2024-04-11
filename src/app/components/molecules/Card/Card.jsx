@@ -79,9 +79,9 @@ const Card = (props) => {
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         contentLabel="Descripción del producto"
-        className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-[#000000]/50 z-50 bg-opacity-50"
+        className="fixed overflow-y-auto top-0 left-0 w-full h-full flex items-center justify-center bg-[#000000]/50 z-50 bg-opacity-50 "
       >
-        <div className="relative border-[#e2ddddc9] border-1 mt-6 p-4 bg-[#ffffff] flex flex-col items-center justify-center">
+        <div className="relative border-[#e2ddddc9] border-1 mt-6 p-4 bg-[#ffffff] flex flex-col items-center justify-center  max-sm:w-full max-sm:h-full">
           <button
             className="absolute top-0 right-0 m-2 bg-[#000000] text-[#ffffff] w-10 h-8 rounded-md hover:bg-[#1a1a1a]/90"
             onClick={closeModal}
@@ -90,7 +90,7 @@ const Card = (props) => {
           </button>
           <h2 className="text-2xl font-extrabold mx-10">{currentItem.title}</h2>
           <img
-            className="w-[35rem] sm:w-2rem -mb-6"
+            className="max-lg:w-[25rem] max 2xl: w-[25rem] 2xl:w-[25rem]  sm:w-2rem -mb-6"
             src={currentItem.img}
           />
           <ul className="mb-5 text-xl font-light text-[#000000]">
