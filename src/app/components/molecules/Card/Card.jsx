@@ -1,17 +1,16 @@
 import axios from "axios";
-import React from "react";
-
-
+import React, { useState } from "react";
+import Modal from "react-modal";
 
 const Card = (props) => {
   let qty = 1;
-
-
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [currentItem, setCurrentItem] = useState({});
 
   const addItem = async (a, b) => {
     let isExisting = false;
     const result = await axios.get("http://localhost:8080/orderitem");
-    
+
     result.data.forEach((orderItem) => {
       if (a === orderItem.name) {
         orderItem.qty += 1;
@@ -22,8 +21,6 @@ const Card = (props) => {
         };
         axios.put(`http://localhost:8080/orderitem/${orderItem.id}`, order);
         isExisting = true;
-
-        
       }
     });
     if (!isExisting) {
@@ -34,11 +31,15 @@ const Card = (props) => {
       };
       axios.post("http://localhost:8080/orderitem", order);
     }
+  };
 
-    
+  const openModal = (item) => {
+    setCurrentItem(item);
+    setModalIsOpen(true);
+  };
 
-
-
+  const closeModal = () => {
+    setModalIsOpen(false);
   };
   return (
     <div className="flex flex-wrap">
@@ -56,10 +57,7 @@ const Card = (props) => {
             <p className="line-through font-light text-[#8d8080]">
               $ {value.price2}
             </p>
-            <button
-              className="add-btn"
-              onClick={() => addItem(value.title, value.price)}
-            >
+            <button className="add-btn" onClick={() => openModal(value)}>
               <svg
                 className="h-8 w-8 text-slate-500"
                 fill="none"
@@ -77,6 +75,41 @@ const Card = (props) => {
           </div>
         </div>
       ))}
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        contentLabel="Descripción del producto"
+        className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-[#000000]/50 z-50 bg-opacity-50"
+      >
+        <div className="relative border-[#e2ddddc9] border-1 mt-6 p-4 bg-[#ffffff] flex flex-col items-center justify-center">
+          <button
+            className="absolute top-0 right-0 m-2 bg-[#000000] text-[#ffffff] w-10 h-8 rounded-md hover:bg-[#1a1a1a]/90"
+            onClick={closeModal}
+          >
+            X
+          </button>
+          <h2 className="text-2xl font-extrabold mx-10">{currentItem.title}</h2>
+          <img
+            className="w-[35rem] sm:w-2rem -mb-6"
+            src={currentItem.img}
+          />
+          <ul className="mb-5 text-xl font-light text-[#000000]">
+            {currentItem.description &&
+              currentItem.description.map((desc, index) => (
+                <li key={index}>{desc}</li>
+              ))}
+          </ul>
+          <button
+            className="add-btn bg-[#000000] text-[#ffffff] w-24 h-8 rounded-md hover:bg-[#000000]/90"
+            onClick={() => {
+              addItem(currentItem.title, currentItem.price);
+              closeModal();
+            }}
+          >
+            Agregar al carrito
+          </button>
+        </div>
+      </Modal>
     </div>
   );
 };
